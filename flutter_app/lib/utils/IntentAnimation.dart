@@ -44,11 +44,13 @@ class IntentAnimation {
   }
 
   static bool intentBack({@required BuildContext context, result}) {
-    return Navigator.pop(context, result);
+     Navigator.pop(context, result);
+     return true;
   }
 
   static bool intentBack1({@required BuildContext context, result}) {
-    return Navigator.of(context).pop();
+     Navigator.of(context).pop();
+      return true;
   }
 }
 

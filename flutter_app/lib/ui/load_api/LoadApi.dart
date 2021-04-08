@@ -14,8 +14,8 @@ class LoadApi extends StatelessWidget {
             "https://raw.githubusercontent.com/vandoannguyen/ThucTapTotNghiep/master/api.json")
         .then((value) {
       dynamic data = jsonDecode(value.body);
-      Common.rootUrlApi = data["rootUrlApi"];
-      Common.rootUrl = data["rootUrl"];
+      // Common.rootUrlApi = data["rootUrlApi"];
+      // Common.rootUrl = data["rootUrl"];
       print(Common.rootUrlApi + "   " + Common.rootUrl);
       IntentAnimation.intentPushReplacement(
           context: context,

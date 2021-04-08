@@ -32,7 +32,7 @@ class _MorePageState extends State<MorePage> implements MoreView {
     return Scaffold(
       key: _viewModel.scaffolKey,
       resizeToAvoidBottomInset: false,
-      resizeToAvoidBottomPadding: false,
+      // resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         title: Text("Thông tin"),
         centerTitle: true,

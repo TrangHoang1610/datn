@@ -54,9 +54,7 @@ function updateShop(value) {
             });
     })
 }
-function deleteShop(id) {
-    console.log(id);
-    
+function deleteShop(id) {   
     return new Promise((reslove, reject) => {
         pool.query("DELETE FROM shop WHERE idShop=?", [id], (err, rows) => {
             if (err)

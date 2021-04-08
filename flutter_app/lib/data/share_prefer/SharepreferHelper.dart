@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:wasm';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -12,9 +11,9 @@ abstract class ISharepreferHelper {
 
   Future getPass();
 
-  Future<Void> savePass(str);
+  Future savePass(str);
 
-  Future<Void> saveUserName(str);
+  Future saveUserName(str);
 }
 
 class SharepreferHelper implements ISharepreferHelper {
@@ -60,7 +59,7 @@ class SharepreferHelper implements ISharepreferHelper {
   }
 
   @override
-  Future<Void> savePass(str) async {
+  Future savePass(str) async {
     // TODO: implement savePass
     Completer completer = new Completer();
     SharedPreferences prefer = await SharedPreferences.getInstance();
@@ -70,7 +69,7 @@ class SharepreferHelper implements ISharepreferHelper {
   }
 
   @override
-  Future<Void> saveUserName(str) async {
+  Future saveUserName(str) async {
     // TODO: implement saveUserName
     Completer completer = new Completer();
     SharedPreferences prefer = await SharedPreferences.getInstance();

@@ -22,14 +22,14 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
-  http: ^0.12.0+4
+  cupertino_icons:
+  http:
   shared_preferences:
   qrscan:
   image_picker:
   intl:
-  flutter_cupertino_date_picker: ^1.0.12
-  flutter_string_encryption: ^0.3.1
+#  flutter_cupertino_date_picker:
+  flutter_string_encryption:
 
 
 dev_dependencies:

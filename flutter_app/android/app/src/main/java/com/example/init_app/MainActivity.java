@@ -46,17 +46,12 @@ public class MainActivity extends FlutterActivity {
     @Override
     public void configureFlutterEngine(FlutterEngine flutterEngine) {
         super.configureFlutterEngine(flutterEngine);
-        GeneratedPluginRegistrant.registerWith(flutterEngine);
+//        GeneratedPluginRegistrant.registerWith(flutterEngine);
         new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL).setMethodCallHandler(new MethodChannel.MethodCallHandler() {
             @Override
             public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
                 switch (methodCall.method) {
-//                    case "rateManual": {
-//                        break;
-//                    }
-//                    case "rateAuto": {
-//                        break;
-//                    }
+
                     case "getImage": {
                         resultGetImages = result;
                         Intent intent = new Intent();
@@ -70,44 +65,4 @@ public class MainActivity extends FlutterActivity {
 
     }
 
-//    public static void rateApp(Context context) {
-//        Intent intent = new Intent(new Intent(Intent.ACTION_VIEW,
-//                Uri.parse("http://play.google.com/store/apps/details?id=" + context.getPackageName())));
-//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        context.startActivity(intent);
-//    }
-//
-//    //Rate
-//    private void rateAuto() {
-//        int rate = SharedPrefsUtils.getInstance(this).getInt("rate");
-//        if (rate < 1) {
-//            RatingDialog ratingDialog = new RatingDialog(this);
-//            ratingDialog.setRatingDialogListener(this);
-//            ratingDialog.showDialog();
-//        }
-//    }
-//
-//    private void rateManual() {
-//        RatingDialog ratingDialog = new RatingDialog(this);
-//        ratingDialog.setRatingDialogListener(this);
-//        ratingDialog.showDialog();
-//    }
-//
-//    @Override
-//    public void onDismiss() {
-//
-//    }
-//
-//    @Override
-//    public void onSubmit(float rating) {
-//        if (rating > 3) {
-//            rateApp(this);
-//            SharedPrefsUtils.getInstance(this).putInt("rate", 5);
-//        }
-//    }
-//
-//    @Override
-//    public void onRatingChanged(float rating) {
-//    }
 }

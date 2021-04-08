@@ -3,7 +3,7 @@ import 'dart:collection';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
+// import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 import 'package:init_app/common/Common.dart';
 import 'package:init_app/data/AppDataHelper.dart';
 import 'package:init_app/utils/BasePresenter.dart';
@@ -214,46 +214,46 @@ class HomePagePresenter<V extends HomePageView> extends BasePresenter<V> {
     const String INIT_DATETIME = '2020-04-13';
     DateTime _dateTime;
     String _format = 'yyyy-MMMM-dd';
-    DateTimePickerLocale _locale = DateTimePickerLocale.en_us;
-    _dateTime = DateTime.parse(INIT_DATETIME);
-    DatePicker.showDatePicker(context,
-        pickerTheme: DateTimePickerTheme(
-          showTitle: true,
-          titleHeight: 30,
-          confirm: Icon(
-            Icons.done,
-            color: Colors.blue,
-          ),
-          cancel: Icon(
-            Icons.close,
-            color: Colors.red,
-          ),
-        ),
-        minDateTime: DateTime.parse(MIN_DATETIME),
-        maxDateTime: DateTime.parse(MAX_DATETIME),
-        initialDateTime: new DateTime.now(),
-        dateFormat: _format,
-        locale: _locale,
-        onClose: () => {},
-        onCancel: () => {},
-        onChange: (dateTime, List<int> index) {
-          print(dateTime);
-        },
-        onConfirm: (dateTime, List<int> index) {
-          if (dateTime.isBefore(_viewModel.endDay)) {
-            _viewModel.firstDay = new DateTime(
-                dateTime.year, dateTime.month, dateTime.day, 0, 0, 0, 0, 0);
-            getSink(DAY_OF_WEEK).add(new BlocLoaded(
-                {"firstDay": dateTime, "endDay": _viewModel.endDay}));
-            getBestSeller();
-            getBills();
-          } else {
-            _viewModel.scaffKeyHomePage.currentState.showSnackBar(new SnackBar(
-              content: Text("Vui lòng chọn lại ngày"),
-              backgroundColor: Colors.blue,
-            ));
-          }
-        });
+    // DateTimePickerLocale _locale = DateTimePickerLocale.en_us;
+    // _dateTime = DateTime.parse(INIT_DATETIME);
+    // DatePicker.showDatePicker(context,
+    //     pickerTheme: DateTimePickerTheme(
+    //       showTitle: true,
+    //       titleHeight: 30,
+    //       confirm: Icon(
+    //         Icons.done,
+    //         color: Colors.blue,
+    //       ),
+    //       cancel: Icon(
+    //         Icons.close,
+    //         color: Colors.red,
+    //       ),
+    //     ),
+    //     minDateTime: DateTime.parse(MIN_DATETIME),
+    //     maxDateTime: DateTime.parse(MAX_DATETIME),
+    //     initialDateTime: new DateTime.now(),
+    //     dateFormat: _format,
+    //     locale: _locale,
+    //     onClose: () => {},
+    //     onCancel: () => {},
+    //     onChange: (dateTime, List<int> index) {
+    //       print(dateTime);
+    //     },
+    //     onConfirm: (dateTime, List<int> index) {
+    //       if (dateTime.isBefore(_viewModel.endDay)) {
+    //         _viewModel.firstDay = new DateTime(
+    //             dateTime.year, dateTime.month, dateTime.day, 0, 0, 0, 0, 0);
+    //         getSink(DAY_OF_WEEK).add(new BlocLoaded(
+    //             {"firstDay": dateTime, "endDay": _viewModel.endDay}));
+    //         getBestSeller();
+    //         getBills();
+    //       } else {
+    //         _viewModel.scaffKeyHomePage.currentState.showSnackBar(new SnackBar(
+    //           content: Text("Vui lòng chọn lại ngày"),
+    //           backgroundColor: Colors.blue,
+    //         ));
+    //       }
+    //     });
   }
 
   void onClickToDate(context) {
@@ -262,49 +262,49 @@ class HomePagePresenter<V extends HomePageView> extends BasePresenter<V> {
     const String INIT_DATETIME = '2020-04-13';
     DateTime _dateTime;
     String _format = 'yyyy-MMMM-dd';
-    DateTimePickerLocale _locale = DateTimePickerLocale.en_us;
-    _dateTime = DateTime.parse(INIT_DATETIME);
-    DatePicker.showDatePicker(
-      context,
-      pickerTheme: DateTimePickerTheme(
-        showTitle: true,
-        titleHeight: 30,
-        confirm: Icon(
-          Icons.done,
-          color: Colors.blue,
-        ),
-        cancel: Icon(
-          Icons.close,
-          color: Colors.red,
-        ),
-      ),
-      minDateTime: DateTime.parse(MIN_DATETIME),
-      maxDateTime: DateTime.parse(MAX_DATETIME),
-      initialDateTime: new DateTime.now(),
-      dateFormat: _format,
-      locale: _locale,
-      onClose: () => print(_dateTime),
-      onCancel: () => print(_dateTime),
-      onChange: (dateTime, List<int> index) {
-        print(dateTime);
-      },
-      onConfirm: (dateTime, List<int> index) {
-        if (dateTime.isAfter(_viewModel.firstDay)) {
-          _viewModel.endDay = new DateTime(
-              dateTime.year, dateTime.month, dateTime.day, 24, 59, 59, 0, 0);
-          print(_viewModel.endDay);
-          getSink(DAY_OF_WEEK).add(new BlocLoaded(
-              {"firstDay": _viewModel.firstDay, "endDay": dateTime}));
-          getBestSeller();
-          getBills();
-        } else {
-          _viewModel.scaffKeyHomePage.currentState.showSnackBar(new SnackBar(
-            content: Text("Vui lòng chọn lại ngày"),
-            backgroundColor: Colors.blue,
-          ));
-        }
-      },
-    );
+    // DateTimePickerLocale _locale = DateTimePickerLocale.en_us;
+    // _dateTime = DateTime.parse(INIT_DATETIME);
+    // DatePicker.showDatePicker(
+    //   context,
+    //   pickerTheme: DateTimePickerTheme(
+    //     showTitle: true,
+    //     titleHeight: 30,
+    //     confirm: Icon(
+    //       Icons.done,
+    //       color: Colors.blue,
+    //     ),
+    //     cancel: Icon(
+    //       Icons.close,
+    //       color: Colors.red,
+    //     ),
+    //   ),
+    //   minDateTime: DateTime.parse(MIN_DATETIME),
+    //   maxDateTime: DateTime.parse(MAX_DATETIME),
+    //   initialDateTime: new DateTime.now(),
+    //   dateFormat: _format,
+    //   locale: _locale,
+    //   onClose: () => print(_dateTime),
+    //   onCancel: () => print(_dateTime),
+    //   onChange: (dateTime, List<int> index) {
+    //     print(dateTime);
+    //   },
+    //   onConfirm: (dateTime, List<int> index) {
+    //     if (dateTime.isAfter(_viewModel.firstDay)) {
+    //       _viewModel.endDay = new DateTime(
+    //           dateTime.year, dateTime.month, dateTime.day, 24, 59, 59, 0, 0);
+    //       print(_viewModel.endDay);
+    //       getSink(DAY_OF_WEEK).add(new BlocLoaded(
+    //           {"firstDay": _viewModel.firstDay, "endDay": dateTime}));
+    //       getBestSeller();
+    //       getBills();
+    //     } else {
+    //       _viewModel.scaffKeyHomePage.currentState.showSnackBar(new SnackBar(
+    //         content: Text("Vui lòng chọn lại ngày"),
+    //         backgroundColor: Colors.blue,
+    //       ));
+    //     }
+    //   },
+    // );
   }
 
   void getCategories() {

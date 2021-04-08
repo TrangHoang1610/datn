@@ -1,4 +1,4 @@
-import 'dart:wasm';
+
 
 import 'package:init_app/data/api/ApiHelper.dart';
 import 'package:init_app/data/api/IApiHelper.dart';
@@ -46,13 +46,13 @@ class AppDataHelper implements IAppDataHelper {
   }
 
   @override
-  Future<Void> savePass(str) {
+  Future savePass(str) {
     // TODO: implement savePass
     return sharePreferHelper.savePass(str);
   }
 
   @override
-  Future<Void> saveUserName(str) {
+  Future saveUserName(str) {
     // TODO: implement saveUserName
     return sharePreferHelper.saveUserName(str);
   }

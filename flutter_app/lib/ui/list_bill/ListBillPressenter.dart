@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 import 'package:init_app/common/Common.dart';
 import 'package:init_app/data/AppDataHelper.dart';
 import 'package:init_app/ui/list_bill/ListBillView.dart';
@@ -95,37 +94,37 @@ class ListBillPresenter<V extends ListBillView> extends BasePresenter<V> {
     const String INIT_DATETIME = '2020-04-13';
     DateTime _dateTime;
     String _format = 'yyyy-MMMM-dd';
-    DateTimePickerLocale _locale = DateTimePickerLocale.en_us;
-    _dateTime = DateTime.parse(INIT_DATETIME);
-    DatePicker.showDatePicker(
-      context,
-      pickerTheme: DateTimePickerTheme(
-        showTitle: true,
-        titleHeight: 30,
-        confirm: Icon(
-          Icons.done,
-          color: Colors.blue,
-        ),
-        cancel: Icon(
-          Icons.close,
-          color: Colors.red,
-        ),
-      ),
-      minDateTime: DateTime.parse(MIN_DATETIME),
-      maxDateTime: DateTime.parse(MAX_DATETIME),
-      initialDateTime: DateTime.now(),
-      dateFormat: _format,
-      locale: _locale,
-      onClose: () => {},
-      onCancel: () => {},
-      onChange: (dateTime, List<int> index) {
-        print(dateTime);
-        callBack(null);
-      },
-      onConfirm: (dateTime, List<int> index) {
-        callBack(dateTime);
-      },
-    );
+    // DateTimePickerLocale _locale = DateTimePickerLocale.en_us;
+    // _dateTime = DateTime.parse(INIT_DATETIME);
+    // DatePicker.showDatePicker(
+    //   context,
+    //   pickerTheme: DateTimePickerTheme(
+    //     showTitle: true,
+    //     titleHeight: 30,
+    //     confirm: Icon(
+    //       Icons.done,
+    //       color: Colors.blue,
+    //     ),
+    //     cancel: Icon(
+    //       Icons.close,
+    //       color: Colors.red,
+    //     ),
+    //   ),
+    //   minDateTime: DateTime.parse(MIN_DATETIME),
+    //   maxDateTime: DateTime.parse(MAX_DATETIME),
+    //   initialDateTime: DateTime.now(),
+    //   dateFormat: _format,
+    //   locale: _locale,
+    //   onClose: () => {},
+    //   onCancel: () => {},
+    //   onChange: (dateTime, List<int> index) {
+    //     print(dateTime);
+    //     callBack(null);
+    //   },
+    //   onConfirm: (dateTime, List<int> index) {
+    //     callBack(dateTime);
+    //   },
+    // );
   }
 
   void pressFromDate(BuildContext context) {
@@ -278,7 +277,9 @@ class ListBillPresenter<V extends ListBillView> extends BasePresenter<V> {
       print(result);
       getSink(CHOSE_OPTION).add(new BlocLoaded(result == DATE
           ? "Ngày tạo"
-          : result == PRICE ? "Giá trị" : "Chiết khấu"));
+          : result == PRICE
+              ? "Giá trị"
+              : "Chiết khấu"));
       _viewModel.choseOption = result;
       sortList();
       getSink(LIST_BILL).add(new BlocLoaded(_viewModel.listFilled));

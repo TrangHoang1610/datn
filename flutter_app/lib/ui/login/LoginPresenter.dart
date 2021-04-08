@@ -132,7 +132,7 @@ class LoginPresenter<V extends LoginView> extends BasePresenter<V> {
 
   void getRememberMe() async {
     prefer = await SharedPreferences.getInstance();
-    bool isRemember = await appDataHelper.getRememberMe();
+    bool isRemember = await appDataHelper.getRememberMe() ?? false;
     if (isRemember) {
       _viewModel.isCheck = isRemember;
     } else {
